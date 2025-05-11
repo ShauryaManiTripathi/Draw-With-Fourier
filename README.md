@@ -9,7 +9,7 @@ go run main.go
 npx serve
 ```
 
-# one click with docker
+# 😉😉😉 one click with docker 😉😉😉
 ```bash
 sudo docker run --name fa -p 3000:3000 -p 8081:8081 shauryat1/fourier-artist:latest
 ```
