@@ -1,4 +1,4 @@
-Honourable Mentions - 3blue1Brown for Concept and Kartik Sehgal for motivation
+Honourable Mentions - 3blue1Brown for Concept and <a href="https://github.com/thinkyminer">Kartik Sehgal</a> for motivation
 ### for backend-
 ```bash
 go mod tidy
