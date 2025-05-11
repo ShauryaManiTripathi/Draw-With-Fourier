@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+/* Base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    background-color: #0a0a0a;
+    color: #f2f2f2;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    padding: 20px;
+}
+
+/* Typography */
+h1, h2, h3 {
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Container layout - fixed height with scrolling */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.drawing-container, .result-container {
+    background-color: #121212;
+    border: none;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    flex: 1;
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    min-height: 650px; /* Set min-height to contain all content */
+}
+
+/* Fixed height sections */
+.canvas-section {
+    flex: 0 0 auto;
+    margin-bottom: 15px;
+}
+
+.controls-section {
+    flex: 0 0 auto;
+    margin-bottom: 20px;
+}
+
+/* Scrollable area for previous drawings */
+.scrollable-section {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding-right: 10px; /* Space for scrollbar */
+    max-height: calc(100% - 600px); /* Adjust based on your canvas size */
+}
+
+/* Canvas styling */
+canvas {
+    background-color: #181818;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 15px;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#clearBtn, #resetBtn {
+    background-color: #f44336;
+}
+
+#clearBtn:hover, #resetBtn:hover {
+    background-color: #d32f2f;
+}
+
+#loadingIndicator {
+    margin-top: 10px;
+    color: #666;
+    font-style: italic;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Recent drawings & gallery */
+#previousDrawings {
+    margin-top: 10px;
+    width: 100%;
+}
+
+#recentDrawingsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    border: none;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    width: 100%;
+}
+
+#recentDrawingsList li {
+    margin-bottom: 10px;
+    padding: 8px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#recentDrawingsList li:hover {
+    background-color: #eee;
+}
+
+/* Fullscreen container styles */
+.fullscreen-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.fullscreen-container.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.fullscreen-container.active canvas {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    object-fit: contain;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Vector controls styling */
+.vector-controls {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+}
+
+.vector-controls label {
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#vectorCount {
+    width: 80px;
+    padding: 6px 8px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+
+#vectorCount:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.info-tooltip {
+    cursor: help;
+    margin-left: 8px;
+    color: #888;
+    font-size: 14px;
+}
+
+.info-tooltip:hover {
+    color: #4CAF50;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .drawing-container, .result-container {
+        min-width: 100%;
+    }
+}

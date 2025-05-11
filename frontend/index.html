@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing with Fourier</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Drawing with Fourier Series</h1>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="drawing-container">
+                <h2>Input (just draw)</h2>
+                <div class="canvas-section">
+                    <canvas id="drawingCanvas" width="500" height="500"></canvas>
+                </div>
+                <div class="controls-section">
+                    <div class="controls">
+                        <button id="clearBtn">Clear Canvas</button>
+                        <button id="submitBtn">Process Drawing</button>
+                    </div>
+                    <div class="vector-controls">
+                        <label for="vectorCount">Number of Vectors:</label>
+                        <input type="number" id="vectorCount" min="10" max="500" value="100">
+                        <span class="info-tooltip" title="Higher values produce more detailed drawings but take longer to process">ⓘ</span>
+                    </div>
+                    <div id="loadingIndicator" class="hidden">Processing your drawing...</div>
+                </div>
+            </div>
+            
+            <div class="result-container">
+                <h2>OwO</h2>
+                <div class="canvas-section">
+                    <div class="fullscreen-container">
+                        <canvas id="resultCanvas" width="500" height="500"></canvas>
+                    </div>
+                </div>
+                <div class="controls-section">
+                    <div class="controls">
+                        <button id="playPauseBtn">Play/Pause</button>
+                        <button id="resetBtn">Reset</button>
+                    </div>
+                </div>
+                
+                <div class="scrollable-section">
+                    <div id="previousDrawings">
+                        <h3>Your Previous Drawings</h3>
+                        <div id="drawingsGallery" class="drawings-gallery"></div>
+                        <ul id="recentDrawingsList"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="app.js"></script>
+</body>
+</html>
