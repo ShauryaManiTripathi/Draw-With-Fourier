@@ -1,4 +1,4 @@
-Honourable Mentions - 3blue1Brown for Concept
+Honourable Mentions - 3blue1Brown for Concept and Kartik Sehgal for motivation
 ### for backend-
 ```bash
 go mod tidy
