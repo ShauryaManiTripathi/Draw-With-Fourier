@@ -84,9 +84,9 @@ func createDatabase() error {
 
 func getDbName() string {
 	if testing {
-		return "test"
+		return "test1"
 	} else {
-		return "gofigure"
+		return "gofigure1"
 	}
 }
 

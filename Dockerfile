@@ -69,7 +69,7 @@ echo "MySQL initialized with root password"\n\
 # Start Go backend\n\
 cd /app\n\
 echo "Starting Go backend..."\n\
-./apid &\n\
+./api &\n\
 GO_PID=$!\n\
 echo "Go backend started with PID $GO_PID"\n\
 \n\

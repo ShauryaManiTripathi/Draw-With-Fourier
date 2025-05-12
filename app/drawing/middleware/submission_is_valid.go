@@ -32,6 +32,8 @@ func SubmissionIsValid(next echo.HandlerFunc) echo.HandlerFunc {
 		// Set default for maxVectors if not provided or invalid
 		if input.MaxVectors <= 0 {
 			input.MaxVectors = 100 // Default to 100 vectors
+		} else if input.MaxVectors > 500 {
+			input.MaxVectors = 500 // Cap at 500 vectors for performance reasons
 		}
 
 		c.Set("points", input.Points)
