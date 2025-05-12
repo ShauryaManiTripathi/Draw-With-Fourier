@@ -1,3 +1,4 @@
+Honourable Mentions - <a href="https://www.youtube.com/watch?v=r6sGWTCMz2k&t">3blue1Brown</a> for Concept and <a href="https://github.com/thinkyminer">Kartik Sehgal</a> for motivation
 ### for backend-
 ```bash
 go mod tidy
@@ -9,7 +10,7 @@ go run main.go
 npx serve
 ```
 
-# one click with docker
+# 😉😉😉 one click with docker 😉😉😉
 ```bash
 sudo docker run --name fa -p 3000:3000 -p 8081:8081 shauryat1/fourier-artist:latest
 ```
